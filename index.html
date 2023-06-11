@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale = 1 user-scalable = 0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+
+<body class="body">
+
+    <header class="header">
+        <div class="container">
+
+            <div class="header__row">
+
+                <div class="header__col header__col--logo">
+                    <div class="logo">
+                        <a href="" class="logo__link">
+                            <img class="logo__pic" src="/img/logo.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="header__col header__col--nav">
+                    <nav class="nav">
+                        <ul class="nav__list">
+
+                            <li class="nav__item">
+                                <a class="nav__item--link" href="#">Главная</a>
+                            </li>
+
+                            <li class="nav__item">
+                                <a class="nav__item--link" href="#">Обо мне</a>
+                            </li>
+
+                            <li class="nav__item">
+                                <a class="nav__item--link" href="#">Услуги</a>
+                            </li>
+
+                            <li class="nav__item">
+                                <a class="nav__item--link" href="#">Статьи</a>
+                            </li>
+
+                            <li class="nav__item">
+                                <a class="nav__item--link" href="#">Контакты</a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="container">
+            <div class="main__blocks blocks" data-tabs>
+
+                <aside class="blocks__item blocks__item--aside block aside">
+                    <div class="aside__text">Левый сайд бар</div>
+                </aside>
+
+                <div class="blocks__item blocks__item--tabs block tabs">
+                    <div class="tabs__item tabs__item--active tabs__item--first" data-tab="first">Таб 1</div>
+                    <div  class="tabs__item tabs__item--second" data-tab="second">Таб 2</div>
+                </div>
+
+                <div class="blocks__item blocks__item--content block content content--active" data-tab-section="first">
+                    <div class="content__item content__item--first">Контент 1</div>
+                    <div class="content__item content__item--first">Контент 2</div>
+                    <div class="content__item content__item--first">Контент 3</div>
+                    <div class="content__item content__item--first">Контент 4</div>
+                    <div class="content__item content__item--first">Контент 5</div>
+                    <div class="content__item content__item--first">Контент 6</div>
+                    <div class="content__item content__item--first">Контент 7</div>
+                    <div class="content__item content__item--first">Контент 8</div>
+                    <div class="content__item content__item--first">Контент 9</div>
+                </div>
+
+                <div class="blocks__item blocks__item--content block content" data-tab-section="second">
+                    <div class="content__item content__item--second">Контент 1</div>
+                    <div class="content__item content__item--second">Контент 2</div>
+                    <div class="content__item content__item--second">Контент 3</div>
+                    <div class="content__item content__item--second">Контент 4</div>
+                    <div class="content__item content__item--second">Контент 5</div>
+                    <div class="content__item content__item--second">Контент 6</div>
+                    <div class="content__item content__item--second">Контент 7</div>
+                    <div class="content__item content__item--second">Контент 8</div>
+                    <div class="content__item content__item--second">Контент 9</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer header"> <!--copy header layout-->
+        <div class="container">
+
+            <div class="header__row">
+
+                <div class="header__col header__col--logo footer__col--button">
+                    <div class="button">
+                        <span class="button__text">Загрузить меню</span>
+                    </div>
+                </div>
+
+                <div class="header__col header__col--nav footer__col--nav">
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+$color-background: #FFFFFF;
+$gray: #F1F1F1;
+$pink: #FFD2DA;
+$orange: #FFE1BD;
+$white: #FFFFFF;
+$brightPink: #FF385C;
+$color-text: #000000;
+
+$font-size: 20px;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$line-height: 24px;
+$font-family: "Inter", sans-serif;
+
+$screen-tablet: "(max-width: 768px)";
+
+* {
+    box-sizing: border-box;
+
+    -webkit-tap-highlight-color: transparent;
+
+    &::before,
+    &::after {
+        box-sizing: border-box;
+    }
+}
+
+html {
+    font-family: $font-family;
+    font-size: 100%;
+
+    color: $color-text;
+    background-color: $color-background;
+}
+
+body {
+    $font-size: $font-size;
+    font-weight: $font-weight-regular;
+    line-height: $line-height;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    $gap-container: 20px;
+    $width-container: 1180px;
+
+    max-width: $width-container + 2 * $gap-container;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $gap-container;
+    padding-left: $gap-container;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 260px;
+    background-color: $gray;
+    margin-bottom: 20px;
+
+    @media #{$screen-tablet} {
+        height: 100%;
+        padding: 20px 0;
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+
+        @media #{$screen-tablet} {
+            flex-direction: column;
+        }
+    }
+
+    &__col {
+        &--logo {
+            margin-right: 80px;
+            @media #{$screen-tablet} {
+                margin-right: 0;
+            }
+        }
+        &--nav {
+            width: 100%;
+        }
+    }
+}
+
+.logo {
+    width: 100%;
+
+    @media #{$screen-tablet} {
+        padding-bottom: 20px;
+    }
+
+    &--pic {
+        width: 220px;
+        height: 68px;
+
+        @media #{$screen-tablet} {
+            width: 142px;
+            height: 44px;
+        }
+    }
+}
+
+.nav {
+    &__list {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-inline-start: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        list-style: none;
+        padding: 40px 0;
+        background-color: $color-background;
+
+        @media #{$screen-tablet} {
+            flex-direction: column;
+        }
+
+    }
+    &__item {
+        display: flex;
+        flex: 1 1 auto;
+        justify-content: center;
+
+        @media #{$screen-tablet} {
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &--link {
+            text-decoration: none;
+            color: $color-text;
+
+            &:hover {
+                cursor: pointer;
+                font-weight: $font-weight-medium;
+            }
+        }
+    }
+}
+
+
+.blocks {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(13, 74px);
+
+    &__item {
+        margin: 10px;
+        &:last-child {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+        &:nth-child(-n+2) {
+            margin-top: 0;
+        }
+        &:nth-child(1) {
+            margin-bottom: 0;
+            @media #{$screen-tablet} {
+                margin-bottom: 20px;
+            }
+        }
+        &:nth-child(3) {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+
+        @media #{$screen-tablet} {
+            margin: 0;
+        }
+
+        &--aside {
+            grid-column: span 1;
+            grid-row: span 13;
+            background-color: $gray;
+
+            @media #{$screen-tablet} {
+                grid-column: span 4;
+                grid-row: span 2;
+            }
+        }
+
+        &--tabs {
+            grid-column: span 2;
+            grid-row: span 1;
+            background-color: $gray;
+
+            @media #{$screen-tablet} {
+                grid-column: span 4;
+                grid-row: span 1;
+            }
+        }
+
+        &--content {
+            grid-column: span 3;
+            grid-row: span 12;
+
+            @media #{$screen-tablet} {
+                grid-column: span 4;
+                grid-row: span 10;
+            }
+        }
+    }
+}
+
+.content {
+    display: none;
+
+    &--active {
+        display: block;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $orange;
+
+        height: calc((100% - 20px * 2)/3);
+        width: calc((100% - 20px * 2)/3);
+        margin-right: 20px;
+        margin-top: 20px;
+        float: left;
+
+        &--first {
+            background-color: $pink;
+        }
+
+        &--second {
+            background-color: $orange;
+        }
+
+        &--active {
+            display: block;
+        }
+
+        &:nth-child(3n+3) {
+            margin-right: 0;
+
+            @media #{$screen-tablet} {
+                margin-right: 20px;
+            }
+        }
+        &:nth-child(-n+3) {
+            margin-top: 0;
+
+            @media #{$screen-tablet} {
+                margin-top: 20px;
+            }
+        }
+
+        @media #{$screen-tablet} {
+            width: calc((100% - 20px)/2);
+            height: 158px;
+        }
+    }
+}
+
+@media #{$screen-tablet} {
+    .content__item:nth-child(2n) {
+        margin-right: 0;
+        float: right;
+    }
+}
+
+.tabs {
+    display: flex;
+    background-color: $white;
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc((50% - 10px));
+        margin-right: 20px;
+        float: left;
+        background-color: $gray;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &--active#{&}--first {
+            background-color: $pink;
+        }
+        &--active#{&}--second {
+            background-color: $orange;
+        }
+    }
+}
+
+.aside {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 35px;
+    padding-top: 35px;
+
+    @media #{$screen-tablet} {
+        align-items: center;
+        padding-top: 0;
+    }
+}
+
+
+.footer {
+    margin-top: 180px;
+
+    &__col {
+        &--button {
+            @media #{$screen-tablet} {
+                padding-bottom: 20px;
+            }
+        }
+    }
+}
+
+.button {
+    width: 239px;
+    background: $brightPink;
+    border-radius: 69px;
+    display: flex;
+    justify-content: center;
+    align-items:baseline;
+    padding: 11px 21px;
+
+    &__text {
+        color: $white;
+        font-weight: $font-weight-medium;
+    }
+}
